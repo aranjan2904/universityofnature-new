@@ -10,11 +10,11 @@ function Navbar() {
 
       <div className="navbar-links">
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/mission">Mission</NavLink>
-        <NavLink to="/programs">Programs</NavLink>
-        <NavLink to="/faculty">Faculty</NavLink>
-        <NavLink to="/gallery">Gallery</NavLink>
-        <NavLink to="/contact">Contact</NavLink>
+        <a href="/#mission">Mission</a>
+        <a href="/#programs">Programs</a>
+        <a href="/#faculty">Faculty</a>
+        <a href="/#gallery">Gallery</a>
+        <a href="/#contact">Contact</a>
       </div>
     </nav>
   );
