@@ -1,0 +1,11 @@
+# Environment variables / secrets
+.env
+*.env
+backend/.env
+
+# VS Code
+.vscode/
+
+# Build output
+target/
+frontend/dist/

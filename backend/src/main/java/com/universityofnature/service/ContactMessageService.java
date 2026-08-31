@@ -7,6 +7,8 @@ import com.universityofnature.mapper.ContactMessageMapper;
 import com.universityofnature.repository.ContactMessageRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ContactMessageService {
 
@@ -21,7 +23,8 @@ public class ContactMessageService {
         this.contactMessageMapper = contactMessageMapper;
     }
 
-    public ContactMessageResponse createContactMessage(CreateContactMessageRequest request) {
+    public ContactMessageResponse createContactMessage(
+            CreateContactMessageRequest request) {
 
         ContactMessage contactMessage = new ContactMessage();
 
@@ -30,8 +33,25 @@ public class ContactMessageService {
         contactMessage.setSubject(request.subject());
         contactMessage.setMessage(request.message());
 
-        ContactMessage savedMessage = contactMessageRepository.save(contactMessage);
+        ContactMessage savedMessage =
+                contactMessageRepository.save(contactMessage);
 
         return contactMessageMapper.toResponse(savedMessage);
+    }
+
+    public List<ContactMessageResponse> getAllMessages() {
+        return contactMessageRepository.findAll()
+                .stream()
+                .map(contactMessageMapper::toResponse)
+                .toList();
+    }
+
+    public boolean deleteMessage(Long id) {
+        if (!contactMessageRepository.existsById(id)) {
+            return false;
+        }
+
+        contactMessageRepository.deleteById(id);
+        return true;
     }
 }

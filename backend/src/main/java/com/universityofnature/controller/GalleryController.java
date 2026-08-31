@@ -3,13 +3,15 @@ package com.universityofnature.controller;
 import com.universityofnature.dto.request.CreateGalleryRequest;
 import com.universityofnature.dto.request.UpdateGalleryRequest;
 import com.universityofnature.dto.response.GalleryResponse;
+import com.universityofnature.service.CloudinaryService;
 import com.universityofnature.service.GalleryService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -18,9 +20,14 @@ import java.util.List;
 public class GalleryController {
 
     private final GalleryService galleryService;
+    private final CloudinaryService cloudinaryService;
 
-    public GalleryController(GalleryService galleryService) {
+    public GalleryController(
+            GalleryService galleryService,
+            CloudinaryService cloudinaryService) {
+
         this.galleryService = galleryService;
+        this.cloudinaryService = cloudinaryService;
     }
 
     @GetMapping
@@ -29,7 +36,9 @@ public class GalleryController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<GalleryResponse> getGalleryById(@PathVariable Long id) {
+    public ResponseEntity<GalleryResponse> getGalleryById(
+            @PathVariable Long id) {
+
         return ResponseEntity.ok(galleryService.getGalleryById(id));
     }
 
@@ -55,7 +64,8 @@ public class GalleryController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteGallery(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteGallery(
+            @PathVariable Long id) {
 
         boolean deleted = galleryService.deleteGallery(id);
 
@@ -64,5 +74,40 @@ public class GalleryController {
         }
 
         return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping("/upload")
+    public ResponseEntity<?> uploadImage(
+            @RequestParam("file") MultipartFile file,
+            @RequestParam(value = "title", required = false) String title,
+            @RequestParam(value = "description", required = false) String description) {
+
+        try {
+            if (file.isEmpty()) {
+                return ResponseEntity.badRequest()
+                        .body("Please select an image.");
+            }
+
+            String imageUrl = cloudinaryService.uploadImage(file);
+
+            String galleryTitle = (title != null && !title.isBlank())
+                    ? title
+                    : "Gallery Image";
+
+            String galleryDescription = (description != null && !description.isBlank())
+                    ? description
+                    : "Uploaded image";
+
+            GalleryResponse savedGallery = galleryService.createGallery(
+                    new CreateGalleryRequest(galleryTitle, imageUrl, galleryDescription)
+            );
+
+            return ResponseEntity.status(HttpStatus.CREATED).body(savedGallery);
+
+        } catch (IOException e) {
+            return ResponseEntity
+                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Image upload failed.");
+        }
     }
 }

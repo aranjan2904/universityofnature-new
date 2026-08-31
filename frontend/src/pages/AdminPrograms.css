@@ -1,0 +1,236 @@
+.admin-programs-page {
+  min-height: 100vh;
+  padding: 70px 8%;
+  background: #f7fffb;
+}
+
+.admin-programs-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.admin-programs-header p {
+  color: #009b78;
+  letter-spacing: 4px;
+  font-size: 13px;
+}
+
+.admin-programs-header h1 {
+  margin: 15px 0;
+  font-family: Georgia, serif;
+  font-size: 50px;
+  font-weight: 500;
+  color: #07152f;
+}
+
+.admin-programs-header span {
+  color: #536782;
+  font-size: 17px;
+}
+
+/* FORM */
+
+.program-form-card {
+  max-width: 750px;
+  margin: 0 auto 70px;
+  padding: 35px;
+  background: #ffffff;
+  border: 1px solid #ccefe3;
+  border-radius: 24px;
+  box-shadow: 0 8px 25px rgba(0, 100, 70, 0.08);
+}
+
+.program-form-card h2 {
+  margin: 0 0 25px;
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-weight: 500;
+  color: #07152f;
+}
+
+.program-form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.program-form-card label {
+  margin-top: 10px;
+  color: #33485e;
+  font-weight: 600;
+}
+
+.program-form-card input,
+.program-form-card textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 15px;
+  border: 1px solid #ccefe3;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #07152f;
+  font: inherit;
+  outline: none;
+}
+
+.program-form-card input:focus,
+.program-form-card textarea:focus {
+  border-color: #009b78;
+  box-shadow: 0 0 0 3px rgba(0, 155, 120, 0.08);
+}
+
+.program-form-card textarea {
+  resize: vertical;
+}
+
+.program-form-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.program-form-buttons button {
+  padding: 13px 22px;
+  border: none;
+  border-radius: 10px;
+  background: #009b78;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.program-form-buttons button:hover {
+  background: #007e62;
+}
+
+.program-form-buttons button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.program-form-buttons .cancel-button {
+  background: #e8efec;
+  color: #33485e;
+}
+
+.program-form-buttons .cancel-button:hover {
+  background: #dce6e2;
+}
+
+/* PROGRAM LIST */
+
+.admin-program-list {
+  max-width: 1400px;
+  margin: auto;
+}
+
+.admin-program-list > h2 {
+  margin-bottom: 25px;
+  font-family: Georgia, serif;
+  font-size: 32px;
+  font-weight: 500;
+  color: #07152f;
+}
+
+.program-admin-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.program-admin-card {
+  overflow: hidden;
+  background: white;
+  border: 1px solid #ccefe3;
+  border-radius: 20px;
+  box-shadow: 0 5px 18px rgba(0, 100, 70, 0.07);
+}
+
+.program-admin-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+}
+
+.program-admin-content {
+  padding: 22px;
+}
+
+.program-admin-content h3 {
+  margin: 0 0 12px;
+  color: #07152f;
+  font-family: Georgia, serif;
+  font-size: 24px;
+}
+
+.program-admin-content p {
+  color: #536782;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.program-admin-content strong {
+  color: #33485e;
+}
+
+.program-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.program-actions button {
+  padding: 9px 16px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.edit-button {
+  background: #009b78;
+}
+
+.edit-button:hover {
+  background: #007e62;
+}
+
+.delete-button {
+  background: #d9534f;
+}
+
+.delete-button:hover {
+  background: #b93f3b;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+  .program-admin-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .admin-programs-page {
+    padding: 50px 5%;
+  }
+
+  .admin-programs-header h1 {
+    font-size: 40px;
+  }
+
+  .program-admin-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .program-form-card {
+    padding: 25px;
+  }
+
+  .program-form-buttons {
+    flex-direction: column;
+  }
+}

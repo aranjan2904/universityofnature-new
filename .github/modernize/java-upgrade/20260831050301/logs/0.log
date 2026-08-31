@@ -1,0 +1,90 @@
+2026-08-31T05:03:01.073Z [INFO] ----------------------invoke appmod-list-jdks----------------------
+2026-08-31T05:03:01.073Z [INFO] [Tool.invoke]({name: appmod-list-jdks, modelId: auto, input: {
+  "sessionId": "",
+  "additionalSearchPaths": [
+    "C:\\Program Files\\Java",
+    "C:\\Program Files\\Eclipse Adoptium",
+    "C:\\Users\\aranj\\AppData\\Local\\Programs\\Eclipse Adoptium"
+  ],
+  "version": "25",
+  "projectPath": "c:\\Users\\aranj\\Desktop\\UniversityOfNature"
+}}).
+2026-08-31T05:03:01.074Z [INFO] [Tool.invoke] do invoke.
+2026-08-31T05:03:01.118Z [INFO] [Tool.invoke]({result: {
+  "message": "No JDK installations found."
+}}).
+2026-08-31T05:03:01.118Z [INFO] ----------------------invoked appmod-list-jdks----------------------
+2026-08-31T05:03:01.227Z [INFO] ----------------------invoke appmod-list-mavens----------------------
+2026-08-31T05:03:01.227Z [INFO] [Tool.invoke]({name: appmod-list-mavens, modelId: auto, input: {
+  "sessionId": "",
+  "additionalSearchPaths": [
+    "C:\\Program Files\\Apache\\Maven",
+    "C:\\Users\\aranj\\AppData\\Local\\Programs\\apache-maven"
+  ],
+  "projectPath": "c:\\Users\\aranj\\Desktop\\UniversityOfNature"
+}}).
+2026-08-31T05:03:01.228Z [INFO] [Tool.invoke] do invoke.
+2026-08-31T05:03:01.233Z [INFO] [Tool.invoke]({result: {
+  "message": "We found following maven installations in your system:\n\n1. 📁 Path: C:\\Program Files\\Maven\\apache-maven-3.9.16\\bin\n   🏷️ Source: MAVEN_HOME,PATH\n\nTotal: 1 Maven installation(s) found"
+}}).
+2026-08-31T05:03:01.234Z [INFO] ----------------------invoked appmod-list-mavens----------------------
+2026-08-31T05:03:07.023Z [INFO] ---------------------prepare appmod-report-event----------------------
+2026-08-31T05:03:07.023Z [INFO] [Tool.prepareInvocation]({name: appmod-report-event, input: {
+  "projectPath": "C:\\Users\\aranj\\Desktop\\UniversityOfNature",
+  "event": "precheckCompleted",
+  "phase": "precheck",
+  "status": "succeeded",
+  "details": {
+    "components": [
+      {
+        "name": "jdk",
+        "baseVersion": "17",
+        "targetVersion": "25"
+      },
+      {
+        "name": "spring-boot",
+        "baseVersion": "4.1.1",
+        "targetVersion": "4.1.1"
+      }
+    ]
+  }
+}}).
+2026-08-31T05:03:07.024Z [INFO] [Tool.prepareInvocation] do prepare invocation.
+2026-08-31T05:03:07.025Z [INFO] [Tool.prepareInvocation]({result: {
+  "invocationMessage": "Report upgrade event"
+}}).
+2026-08-31T05:03:07.025Z [INFO] ----------------------prepared appmod-report-event----------------------
+2026-08-31T05:03:07.176Z [INFO] ----------------------invoke appmod-report-event----------------------
+2026-08-31T05:03:07.177Z [INFO] [Tool.invoke]({name: appmod-report-event, modelId: auto, input: {
+  "projectPath": "C:\\Users\\aranj\\Desktop\\UniversityOfNature",
+  "event": "precheckCompleted",
+  "phase": "precheck",
+  "status": "succeeded",
+  "details": {
+    "components": [
+      {
+        "name": "jdk",
+        "baseVersion": "17",
+        "targetVersion": "25"
+      },
+      {
+        "name": "spring-boot",
+        "baseVersion": "4.1.1",
+        "targetVersion": "4.1.1"
+      }
+    ]
+  }
+}}).
+2026-08-31T05:03:07.177Z [INFO] [Tool.invoke] do invoke.
+2026-08-31T05:03:07.181Z [INFO] Project c:\Users\aranj\Desktop\UniversityOfNature is not a maven project, try to get java version from gradle
+2026-08-31T05:03:07.192Z [INFO] [Tool.invoke]({result: {
+  "message": "Event 'precheckCompleted' reported!\nSession ID: 20260831050301,\nSession Dir: c:\\Users\\aranj\\Desktop\\UniversityOfNature\\.github\\modernize\\java-upgrade\\20260831050301"
+}}).
+2026-08-31T05:03:07.192Z [INFO] ----------------------invoked appmod-report-event----------------------
+2026-08-31T05:03:07.275Z [INFO] Try to get java version from gradle config files: 
+2026-08-31T05:03:07.276Z [INFO] Try to get java version from gradle properties: undefined
+2026-08-31T05:03:07.276Z [INFO] Project java version: 8
+2026-08-31T05:03:07.305Z [WARN] [ReportEventTool] Full project info unavailable, attempting lightweight fallback: UserError: Failed to detect build tool for the project at c:\Users\aranj\Desktop\UniversityOfNature. There are child Maven/Gradle projects detected: "backend". Would you like to use one of them instead?
+2026-08-31T05:03:07.306Z [INFO] Project c:\Users\aranj\Desktop\UniversityOfNature is not a maven project, try to get java version from gradle
+2026-08-31T05:03:07.316Z [INFO] Try to get java version from gradle config files: 
+2026-08-31T05:03:07.317Z [INFO] Try to get java version from gradle properties: undefined

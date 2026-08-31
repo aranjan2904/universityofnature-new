@@ -56,19 +56,20 @@ function Home() {
           </div>
         </div>
       </section>
-
+<section id="gallery" className="home-section">
+        <Gallery />
+      </section>
       <section id="mission" className="home-section">
         <About />
       </section>
+      
       <section id="programs" className="home-section">
         <Programs />
       </section>
       <section id="faculty" className="home-section">
         <Faculty />
       </section>
-      <section id="gallery" className="home-section">
-        <Gallery />
-      </section>
+      
       <section id="contact" className="home-section">
         <Contact />
       </section>

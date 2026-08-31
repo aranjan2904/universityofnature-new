@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/faculty";
+import { API_BASE_URL } from "../config";
+
+const API_URL = `${API_BASE_URL}/api/faculty`;
 
 export const getFaculty = async () => {
   const response = await axios.get(API_URL);
