@@ -1,0 +1,19 @@
+services:
+  backend:
+    image: university-of-nature-backend:latest
+    container_name: university-of-nature-backend
+    ports:
+      - "8080:8080"
+    env_file:
+      - ./backend/.env
+    environment:
+      DB_HOST: host.docker.internal
+      DB_PORT: 5500
+
+  frontend:
+    image: university-of-nature-frontend:latest
+    container_name: university-of-nature-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
