@@ -26,7 +26,10 @@ public class CorsConfig {
                                 "DELETE",
                                 "OPTIONS"
                         )
-                        .allowedHeaders("*");
+                        .allowedHeaders("Content-Type", "Authorization", "Accept", "Origin")
+                        .exposedHeaders("Content-Type", "Authorization")
+                        .allowCredentials(true)
+                        .maxAge(3600);
             }
         };
     }
