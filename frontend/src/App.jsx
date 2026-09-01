@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 
@@ -16,7 +16,7 @@ import AdminMessages from "./pages/AdminMessages";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Navbar />
 
       <Routes>
@@ -32,7 +32,7 @@ function App() {
         <Route path="/admin/faculty" element={<AdminFaculty />} />
         <Route path="/admin/messages" element={<AdminMessages />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
