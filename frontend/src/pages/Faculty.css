@@ -1,12 +1,18 @@
 .faculty-page {
   min-height: 100vh;
-  padding: 70px 8% 100px;
+  padding: 70px 5% 100px;
   background: linear-gradient(
     180deg,
     #effcf6 0%,
     #ffffff 55%,
     #f3fff8 100%
   );
+}
+
+@media (max-width: 768px) {
+  .faculty-page {
+    padding: 40px 4% 60px;
+  }
 }
 
 .faculty-hero {
@@ -32,6 +38,20 @@
   line-height: 1.15;
 }
 
+@media (max-width: 768px) {
+  .faculty-hero {
+    margin-bottom: 40px;
+  }
+  
+  .faculty-hero h1 {
+    font-size: 32px;
+  }
+  
+  .faculty-hero span {
+    font-size: 16px;
+  }
+}
+
 .faculty-hero span {
   display: block;
   margin-top: 20px;
@@ -46,6 +66,20 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 32px;
+}
+
+@media (max-width: 1024px) {
+  .faculty-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .faculty-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
 
 .faculty-card {

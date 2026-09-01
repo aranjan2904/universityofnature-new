@@ -1,7 +1,13 @@
 .admin-gallery-page {
   min-height: 100vh;
-  padding: 70px 8%;
+  padding: 70px 5%;
   background: #f7fffb;
+}
+
+@media (max-width: 768px) {
+  .admin-gallery-page {
+    padding: 40px 4%;
+  }
 }
 
 .admin-gallery-header {
@@ -23,6 +29,20 @@
   color: #07152f;
 }
 
+@media (max-width: 768px) {
+  .admin-gallery-header {
+    margin-bottom: 30px;
+  }
+  
+  .admin-gallery-header h1 {
+    font-size: 32px;
+  }
+  
+  .admin-gallery-header span {
+    font-size: 15px;
+  }
+}
+
 .admin-gallery-header span {
   color: #536782;
 }
@@ -35,6 +55,18 @@
   border: 1px solid #ccefe3;
   border-radius: 24px;
   box-shadow: 0 8px 25px rgba(0, 100, 70, 0.08);
+}
+
+@media (max-width: 768px) {
+  .gallery-upload-card {
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 16px;
+  }
+  
+  .gallery-upload-card h2 {
+    font-size: 24px;
+  }
 }
 
 .gallery-upload-card h2,

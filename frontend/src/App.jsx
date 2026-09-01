@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 
@@ -13,10 +13,11 @@ import AdminGallery from "./pages/AdminGallery";
 import AdminPrograms from "./pages/AdminPrograms";
 import AdminFaculty from "./pages/AdminFaculty";
 import AdminMessages from "./pages/AdminMessages";
+import AdminRecentActivity from "./pages/AdminRecentActivity";
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Navbar />
 
       <Routes>
@@ -31,8 +32,9 @@ function App() {
         <Route path="/admin/programs" element={<AdminPrograms />} />
         <Route path="/admin/faculty" element={<AdminFaculty />} />
         <Route path="/admin/messages" element={<AdminMessages />} />
+        <Route path="/admin/recent-activity" element={<AdminRecentActivity />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 

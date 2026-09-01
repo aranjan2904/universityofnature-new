@@ -1,11 +1,17 @@
 .contact-page {
   min-height: 100vh;
-  padding: 70px 8%;
+  padding: 70px 5%;
   background: linear-gradient(
     180deg,
     #effcf6 0%,
     #ffffff 60%
   );
+}
+
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 40px 4%;
+  }
 }
 
 .contact-hero {
@@ -29,6 +35,20 @@
   font-weight: 500;
 }
 
+@media (max-width: 768px) {
+  .contact-hero {
+    margin-bottom: 40px;
+  }
+  
+  .contact-hero h1 {
+    font-size: 32px;
+  }
+  
+  .contact-hero span {
+    font-size: 16px;
+  }
+}
+
 .contact-hero span {
   display: block;
   margin-top: 18px;
@@ -48,6 +68,37 @@
   border: 1px solid #d9eee6;
   border-radius: 25px;
   box-shadow: 0 8px 25px rgba(20, 80, 60, 0.08);
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 25px;
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-container {
+    gap: 20px;
+    padding: 16px;
+    border-radius: 14px;
+  }
+  
+  .contact-info h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+  
+  .contact-info > p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .contact-form {
+    gap: 14px;
+  }
 }
 
 .contact-info h2 {
@@ -97,6 +148,14 @@
   border-radius: 10px;
   font: inherit;
   outline: none;
+}
+
+@media (max-width: 768px) {
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px 12px;
+    font-size: 16px;
+  }
 }
 
 .contact-form input:focus,

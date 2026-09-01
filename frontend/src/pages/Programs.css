@@ -1,12 +1,18 @@
 .programs-page {
   min-height: 100vh;
-  padding: 70px 8%;
+  padding: 70px 5%;
   background: linear-gradient(
     180deg,
     #effcf6 0%,
     #ffffff 55%,
     #ffffff 100%
   );
+}
+
+@media (max-width: 768px) {
+  .programs-page {
+    padding: 40px 4%;
+  }
 }
 
 /* HERO */
@@ -34,6 +40,20 @@
   line-height: 1.15;
 }
 
+@media (max-width: 768px) {
+  .programs-hero {
+    margin-bottom: 40px;
+  }
+  
+  .programs-hero h1 {
+    font-size: 32px;
+  }
+  
+  .programs-hero span {
+    font-size: 16px;
+  }
+}
+
 .programs-hero span {
   display: block;
   margin-top: 20px;
@@ -50,6 +70,20 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 38px;
+}
+
+@media (max-width: 1024px) {
+  .programs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .programs-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
 
 /* CARD */

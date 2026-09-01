@@ -3,6 +3,8 @@ import Faculty from "./Faculty";
 import Gallery from "./Gallery";
 import Contact from "./Contact";
 import About from "./About";
+import HomeGallery from "../components/HomeGallery";
+import RecentActivity from "../components/RecentActivity";
 import Footer from "../components/Footer";
 
 function Home() {
@@ -56,9 +58,15 @@ function Home() {
           </div>
         </div>
       </section>
-<section id="gallery" className="home-section">
-        <Gallery />
+
+      <section id="recent-activity" className="home-section">
+        <RecentActivity />
       </section>
+
+      <section id="gallery" className="home-section">
+        <HomeGallery />
+      </section>
+
       <section id="mission" className="home-section">
         <About />
       </section>

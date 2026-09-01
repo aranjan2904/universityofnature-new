@@ -10,6 +10,7 @@ function Admin() {
         <Link to="/admin/programs">Programs</Link>
         <Link to="/admin/faculty">Faculty</Link>
         <Link to="/admin/gallery">Gallery</Link>
+        <Link to="/admin/recent-activity">Recent Activity</Link>
         <Link to="/admin/messages">Messages</Link>
       </nav>
 
@@ -41,8 +42,14 @@ function Admin() {
           <p>Upload and manage gallery images.</p>
         </Link>
 
-        <Link to="/admin/messages" className="admin-card">
+        <Link to="/admin/recent-activity" className="admin-card">
           <span>04</span>
+          <h2>Recent Activity</h2>
+          <p>Manage carousel photos and homepage activities.</p>
+        </Link>
+
+        <Link to="/admin/messages" className="admin-card">
+          <span>05</span>
           <h2>Messages</h2>
           <p>View messages submitted through the contact form.</p>
         </Link>

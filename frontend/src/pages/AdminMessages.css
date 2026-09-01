@@ -1,7 +1,13 @@
 .admin-messages-page {
   min-height: 100vh;
-  padding: 70px 8%;
+  padding: 70px 5%;
   background: #f7fffb;
+}
+
+@media (max-width: 768px) {
+  .admin-messages-page {
+    padding: 40px 4%;
+  }
 }
 
 /* HEADER */
@@ -23,6 +29,20 @@
   font-size: 50px;
   font-weight: 500;
   color: #07152f;
+}
+
+@media (max-width: 768px) {
+  .admin-messages-header {
+    margin-bottom: 30px;
+  }
+  
+  .admin-messages-header h1 {
+    font-size: 32px;
+  }
+  
+  .admin-messages-header span {
+    font-size: 15px;
+  }
 }
 
 .admin-messages-header span {
@@ -72,6 +92,24 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 25px;
+}
+
+@media (max-width: 1024px) {
+  .messages-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .messages-grid {
+    gap: 16px;
+  }
+  
+  .messages-title-row {
+    flex-direction: column;
+    gap: 15px;
+  }
 }
 
 /* MESSAGE CARD */

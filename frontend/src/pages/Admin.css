@@ -1,7 +1,13 @@
 .admin-page {
   min-height: 100vh;
-  padding: 80px 8%;
+  padding: 80px 5%;
   background: #f7fffb;
+}
+
+@media (max-width: 768px) {
+  .admin-page {
+    padding: 40px 4%;
+  }
 }
 
 .admin-header {
@@ -23,6 +29,20 @@
   color: #07152f;
 }
 
+@media (max-width: 768px) {
+  .admin-header {
+    margin-bottom: 30px;
+  }
+  
+  .admin-header h1 {
+    font-size: 32px;
+  }
+  
+  .admin-header span {
+    font-size: 15px;
+  }
+}
+
 .admin-header span {
   color: #536782;
   font-size: 18px;
@@ -34,6 +54,13 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 25px;
+}
+
+@media (max-width: 768px) {
+  .admin-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }
 
 .admin-card {
